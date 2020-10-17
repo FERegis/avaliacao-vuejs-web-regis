@@ -1,28 +1,65 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div>
+<div id="container">
+<div class="goTo">
+<router-link class="text" to="/projetos">Projetos</router-link>
+</div>
+<div class="goTo">
+<router-link class="text" to="/dashboard">Dashboard</router-link>
+</div>
+</div>
+<router-view></router-view>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
   }
 }
 </script>
-
+  
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html, body {
+    margin: 0px;
+    padding: 0px;
+
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 40px;
+    background-color: #0275d8;
+    padding: 5px;
+  }
+
+  #containerConteudo {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        padding: 20px;
+        width: 100%;
+    }
+
+.goTo {
+  margin: 0px 20px;
+  font-size: 20px;
+}
+.text{
+  text-decoration: none;
+  color: white !important;  
 }
 </style>
